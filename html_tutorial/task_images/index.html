@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test your skills: HTML images</title>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; margin: 40px; color:#222; }
+        h2 { color: purple; margin: 0 0 8px; }
+        figure { margin: 0 0 30px; max-width: 446px; }
+        figcaption { font-size: .9em; color:#444; margin-top: 6px; }
+        img { display:block; width: 300px; height: auto; } /* keep aspect ratio */
+        a { display:inline-block; margin-top:16px; }
+    </style>
+</head>
+<body>
+
+<!-- Task 1 -->
+<h2>Basic image embed</h2>
+<img
+        src="https://github.com/mdn/learning-area/blob/main/html/multimedia-and-embedding/tasks/images/images/blueberries.jpg?raw=true"
+        alt="Close-up of fresh blueberries"
+        width="300" />
+
+<!-- Task 2 -->
+<h2>Basic image title</h2>
+<img
+        src="./basicimage.jpg" alt="Colorful fall trees in a forest" title="Autumn forest colors" width="300">
+
+
+<!-- Task 3 -->
+<h2>Image and caption</h2>
+<figure>
+    <img
+            src="./firefox.png" alt="Firefox logo..." width="300">
+
+    <figcaption>The 2019 Firefox logo</figcaption>
+</figure>
+
+<a href="../index.html">← Back to Home</a>
+</body>
+</html>

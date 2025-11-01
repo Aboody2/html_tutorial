@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Test your skills: Forms and buttons</title>
+  <style>
+    :root { --purple:#6a0dad; --fg:#222; --muted:#666; --border:#e7e7e7; }
+    * { box-sizing: border-box; }
+    body { font-family: Arial, Helvetica, sans-serif; color:var(--fg); margin:40px; line-height:1.6; }
+    h1{ color:var(--purple); margin:0 0 8px }
+    h2{ color:var(--purple); margin:28px 0 12px }
+    form{ margin:12px 0 28px }
+    fieldset{ border:1px solid var(--border); border-radius:12px; padding:14px 16px; margin:12px 0 }
+    legend{ padding:0 6px; color:#444; font-weight:600 }
+    .grid{ display:grid; grid-template-columns: 220px minmax(220px, 420px); gap:12px 16px; align-items:center }
+    .stack{ display:flex; flex-direction:column; gap:8px }
+    label{ font-weight:600 }
+    .muted{ color:var(--muted); font-size:.9rem }
+    input[type="text"],input[type="password"],input[type="email"],input[type="url"],
+    input[type="tel"],input[type="number"],input[type="color"],textarea,select{
+      width:100%; max-width:420px; padding:8px 10px; border:1px solid #cfcfcf; border-radius:10px;
+    }
+    textarea{ min-height:110px; resize:vertical }
+    ul{ list-style:none; margin:0; padding:0 }
+    .choices li{ display:flex; align-items:center; gap:8px; margin:8px 0 }
+    .row{ margin:10px 0 }
+    button{
+      border:1px solid #cfcfcf; background:#fafafa; padding:9px 14px; border-radius:10px; cursor:pointer;
+      transition: background .15s ease, transform .02s ease;
+    }
+    button:hover{ background:#f0f0f0 }
+    button:active{ transform: translateY(1px) }
+    a{ color:var(--purple); text-decoration:none } a:hover{ text-decoration:underline }
+    /* nice focus ring */
+    input:focus, select:focus, textarea:focus, button:focus{
+      outline:3px solid rgba(106,13,173,.25); outline-offset:2px
+    }
+    hr{ border:0; border-top:1px solid var(--border); margin:24px 0 }
+  </style>
+</head>
+<body>
+
+<h1>Forms and Buttons — Skill Tests</h1>
+
+<!-- Task 1 -->
+<h2>Forms and buttons 1</h2>
+<form action="#" method="post" class="grid">
+  <label for="uid">User ID</label>
+  <input id="uid" name="uid" type="text" autocomplete="username" required placeholder="e.g., afarah01" />
+
+  <label for="pwd">Password</label>
+  <input id="pwd" name="pwd" type="password" autocomplete="current-password" required placeholder="••••••••" />
+
+  <div></div>
+  <button type="submit">Log in</button>
+</form>
+
+<hr />
+
+<!-- Task 2 -->
+<h2>Forms and buttons 2</h2>
+<form action="#" method="get" class="stack">
+  <fieldset>
+    <legend>Who is your favorite pony?</legend>
+    <ul class="choices">
+      <li><input type="radio" id="pinkie" name="pony" value="pinkie" checked><label for="pinkie">Pinkie Pie</label></li>
+      <li><input type="radio" id="rainbow" name="pony" value="rainbow"><label for="rainbow">Rainbow Dash</label></li>
+      <li><input type="radio" id="twilight" name="pony" value="twilight"><label for="twilight">Twilight Sparkle</label></li>
+    </ul>
+  </fieldset>
+
+  <fieldset>
+    <legend>Hotdog preferences</legend>
+    <ul class="choices">
+      <li><input type="checkbox" id="vegan" value="vegan" name="hotdog[]"><label for="vegan">Vegan</label></li>
+      <li><input type="checkbox" id="onions" value="onions" name="hotdog[]"><label for="onions">Onions</label></li>
+      <li><input type="checkbox" id="carrots" value="carrots" name="hotdog[]"><label for="carrots">Carrots</label></li>
+      <li><input type="checkbox" id="peppers" value="peppers" name="hotdog[]"><label for="peppers">Peppers</label></li>
+    </ul>
+  </fieldset>
+
+  <button type="submit">Submit</button>
+</form>
+
+<hr />
+
+<!-- Task 3 -->
+<h2>Forms and buttons 3</h2>
+<form action="#" method="post" class="grid" aria-describedby="prefs-hint">
+  <h3 class="muted" id="prefs-hint" style="grid-column:1/-1;margin:0 0 6px">Edit your preferences</h3>
+
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" required placeholder="you@example.com">
+
+  <label for="website">Website</label>
+  <input id="website" name="website" type="url" placeholder="https://example.com">
+
+  <label for="phone">Phone number</label>
+  <input id="phone" name="phone" type="tel" placeholder="+1 555-123-4567">
+
+  <label for="fave-color">Favorite color</label>
+  <input id="fave-color" name="fave-color" type="color" value="#6a0dad">
+
+  <div></div>
+  <button type="submit">Update preferences</button>
+</form>
+
+<hr />
+
+<!-- Task 4 -->
+<h2>Forms and buttons 4</h2>
+<form action="#" method="get" class="grid">
+  <label for="food">Pick your favorite food:</label>
+  <select id="food" name="food" required>
+    <optgroup label="mains">
+      <option>Salad</option>
+      <option>Curry</option>
+      <option>Pizza</option>
+      <option>Fajitas</option>
+    </optgroup>
+    <optgroup label="snacks">
+      <option>Biscuits</option>
+      <option>Crisps</option>
+      <option>Fruit</option>
+      <option>Breadsticks</option>
+    </optgroup>
+  </select>
+
+  <div></div>
+  <button type="submit">Submit choice</button>
+</form>
+
+<hr />
+
+<!-- Task 5 -->
+<h2>Forms and buttons 5</h2>
+<form action="#" method="post" class="stack">
+  <fieldset>
+    <legend>Personal details</legend>
+    <div class="grid">
+      <label for="name">Name:</label>
+      <input id="name" name="name" type="text">
+
+      <label for="age">Age:</label>
+      <input id="age" name="age" type="number" min="0">
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Comment information</legend>
+    <div class="grid">
+      <label for="comment">Comment:</label>
+      <input id="comment" name="comment" type="text">
+
+      <label for="reply-email">Email (include if you want a reply):</label>
+      <input id="reply-email" name="email" type="email">
+    </div>
+  </fieldset>
+</form>
+
+<hr />
+
+<!-- Task 6 -->
+<h2>Forms and buttons 6</h2>
+<form action="#" method="post" class="grid">
+  <h3 style="grid-column:1/-1;margin:0 0 6px">Enter your support query</h3>
+
+  <label for="uname">User name:</label>
+  <input id="uname" name="uname" type="text" required minlength="5" maxlength="20" placeholder="5–20 characters">
+
+  <label for="email6">Email address:</label>
+  <input id="email6" name="email" type="email" required placeholder="you@example.com">
+
+  <label for="phone6">Phone number:</label>
+  <input id="phone6" name="phone" type="tel" required maxlength="15" placeholder="+1 555-123-4567">
+
+  <label for="comment6" style="align-self:start">Comment:</label>
+  <textarea id="comment6" name="comment" required maxlength="200" placeholder="Max 200 characters"></textarea>
+
+  <div></div>
+  <button type="submit">Submit comment</button>
+</form>
+
+<p><a href="../index.html">← Back to Home</a></p>
+</body>
+</html>
